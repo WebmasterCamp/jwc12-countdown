@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "jwc12-3c4e0"
+  },
+  "targets": {
+    "jwc12-3c4e0": {
+      "hosting": {
+        "countdown": [
+          "jwc12-countdown"
+        ]
+      }
+    }
+  }
+}

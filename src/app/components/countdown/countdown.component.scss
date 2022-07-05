@@ -5,26 +5,30 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #000000;
-  background-image: url('/assets/bg012.png');
+  // background-color: #000000;
+  // background-image: url('/assets/bg012.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  background: linear-gradient(180deg, #8e269f 0%, #131d38 75%);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
+  background-size: cover, cover;
 }
 
 .live-mode {
   background: none;
-  .countdown-text{
+  .countdown-text {
     text-shadow: none;
   }
 }
 
 .text-background {
-  padding: 10em 15.5em;
+  padding: 0em 5em;
   display: flex;
   max-width: 100%;
   cursor: pointer;
-  background-image: url('/assets/ywc-18-countdown-bg.svg');
+  // background-image: url('/assets/ywc-18-countdown-bg.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -93,7 +97,7 @@
   width: 100vw;
   text-align: center;
   padding: 0.5em;
-  background-color: rgba(255, 255, 255, 0.05);
+  // background-color: rgba(255, 255, 255, 0.05);
   font-weight: 800;
   font-family: 'Barlow', sans-serif;
 }
@@ -106,7 +110,7 @@
   justify-content: center;
   align-items: center;
   left: 50%;
-  width: 43em;
+  width: 1100px;
   transform: translateX(-50%);
 }
 
@@ -121,11 +125,11 @@
   margin: 0 24px;
 }
 
-.ywc-logo {
+.logo {
   position: fixed;
   left: 1.5em;
   top: 1.5em;
-  width: 15em;
+  width: 180px;
 }
 
 .ywc-logo-2 {
@@ -133,4 +137,25 @@
   right: 1.5em;
   top: 1.5em;
   width: 12.5em;
+}
+
+.underline {
+  width: 100%;
+  height: 3px;
+  background-color: #e4d0a2;
+  position: relative;
+
+  &.dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #6b541f;
+    border-radius: 100%;
+    border: 3px solid #e4d0a2;
+    box-sizing: border-box;
+  }
 }

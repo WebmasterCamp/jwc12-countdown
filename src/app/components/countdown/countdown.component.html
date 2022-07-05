@@ -1,5 +1,6 @@
 <div class="container" [ngClass]="{ 'live-mode': isLiveMode }">
   <a routerLink="/admin">
+    <div class="underline dot"></div>
     <div [ngClass]="{ 'text-background': true, warn: isEnd }">
       <p *ngIf="text" class="showing-text">{{ text }}</p>
       <p [ngClass]="{ 'countdown-text': true, warn: isEnd }">
@@ -7,10 +8,10 @@
           {{ letter }}
         </span>
       </p>
-
     </div>
+    <div class="underline"></div>
   </a>
-    <img class="sponsor-container" src="/assets/sponsors.svg" />
-    <img class="ywc-logo" src="/assets/ywc18-logo-white.svg" />
-    <img class="ywc-logo-2" src="/assets/ywc18-theme-logo-orange.svg" (click)="toggleLiveMode()"/>
+
+  <img class="sponsor-container" src="/assets/sponsors.svg" />
+  <img class="logo" src="/assets/jwc12-logo.png" (click)="toggleLiveMode()" />
 </div>

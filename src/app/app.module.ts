@@ -30,7 +30,7 @@ import { AdminSigninCardComponent } from './components/admin/admin-signin-card/a
 import { AdminActionCardComponent } from './components/admin/admin-action-card/admin-action-card.component';
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
-  signInOptions: [{ provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID }]
+  signInOptions: [{ provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID }],
 };
 
 @NgModule({
@@ -40,7 +40,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     SettingDialogComponent,
     AdminComponent,
     AdminSigninCardComponent,
-    AdminActionCardComponent
+    AdminActionCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,10 +66,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatSlideToggleModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [SettingDialogComponent]
+  entryComponents: [SettingDialogComponent],
 })
 export class AppModule {}

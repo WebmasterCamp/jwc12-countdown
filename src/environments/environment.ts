@@ -5,15 +5,16 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDC0ExOh_mqNk-IYjw1dl7GSTuX-Nt2Txg',
-    authDomain: 'ywc17-countdown.firebaseapp.com',
-    databaseURL: 'https://ywc17-countdown.firebaseio.com',
-    projectId: 'ywc17-countdown',
-    storageBucket: 'ywc17-countdown.appspot.com',
-    messagingSenderId: '141244683442',
-    appId: '1:141244683442:web:264f6b4cb073273b83e5ab',
-    measurementId: 'G-ER39NZDYVN'
-  }
+    apiKey: 'AIzaSyAjyAAisy4RF-9brgwiu3Ub27aeAqq3RV0',
+    authDomain: 'jwc12-3c4e0.firebaseapp.com',
+    projectId: 'jwc12-3c4e0',
+    storageBucket: 'jwc12-3c4e0.appspot.com',
+    messagingSenderId: '366056596429',
+    appId: '1:366056596429:web:a838e805be33bd02189a84',
+    measurementId: 'G-V7SBWRQYNY',
+    databaseURL:
+      'https://jwc12-3c4e0-default-rtdb.asia-southeast1.firebasedatabase.app',
+  },
 };
 
 /*

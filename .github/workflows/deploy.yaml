@@ -1,0 +1,68 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - main
+      - staging
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  checks: write
+  contents: write
+  deployments: read
+  issues: write
+  discussions: read
+  packages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: read
+  statuses: write
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Cahce node_modules
+        uses: c-hive/gha-yarn-cache@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Build Application
+        run: yarn build
+
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@master
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          args: deploy --only hosting:${{ env.TARGET }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - name: Preview Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          repoToken: '${{ github.token }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          expires: 7d
+          target: ${{ env.TARGET }}
