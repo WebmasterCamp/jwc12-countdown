@@ -9,7 +9,7 @@ const fillZero = (input: number, n: number) =>
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
-  styleUrls: ['./countdown.component.scss']
+  styleUrls: ['./countdown.component.scss'],
 })
 export class CountdownComponent implements OnInit, OnDestroy {
   countdownSubscription: Subscription;
@@ -18,32 +18,32 @@ export class CountdownComponent implements OnInit, OnDestroy {
   showText: boolean;
   timeLetters: string[];
 
-  isLiveMode: boolean
+  isLiveMode: boolean;
 
   constructor(private countdown: CountdownService) {}
 
   ngOnInit() {
     this.countdownSubscription = this.countdown.config
       .pipe(
-        map(config => {
+        map((config) => {
           this.text = config.text;
           this.showText = config.showing === 'text';
           return config;
         }),
-        map(config => config.until.toDate()),
-        switchMap(date =>
+        map((config) => config.until.toDate()),
+        switchMap((date) =>
           interval(19).pipe(
             map(() => this.getTimeDiff(date)),
-            map(timeDiff => this.formatTime(timeDiff))
+            map((timeDiff) => this.formatTime(timeDiff))
           )
         ),
-        map(time => (this.isEnd ? '00:00:00' : time)),
+        map((time) => (this.isEnd ? '00:00:00' : time)),
         startWith('LOADING..')
       )
       .subscribe({
-        next: letters => {
+        next: (letters) => {
           this.timeLetters = letters.split('');
-        }
+        },
       });
   }
 
@@ -53,15 +53,15 @@ export class CountdownComponent implements OnInit, OnDestroy {
 
   toggleLiveMode() {
     // Config for live
-    console.log(window.location.pathname)
+    console.log(window.location.pathname);
 
-    if(this.isLiveMode) {
-      document.getElementsByTagName('body')[0].style.background = '#111'
+    if (this.isLiveMode) {
+      document.getElementsByTagName('body')[0].style.background = '';
     } else {
-      document.getElementsByTagName('body')[0].style.background = 'none'
+      document.getElementsByTagName('body')[0].style.background = 'none';
     }
 
-    this.isLiveMode = !this.isLiveMode
+    this.isLiveMode = !this.isLiveMode;
   }
 
   getTimeDiff(date: Date) {
