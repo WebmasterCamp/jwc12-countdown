@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>YWC18 Countdown</title>
+    <title>JWC12 Countdown</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
@@ -14,9 +14,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -117,13 +120,13 @@
         uniforms = {
           u_time: { type: 'f', value: 1.0 },
           u_resolution: { type: 'v2', value: new THREE.Vector2() },
-          u_mouse: { type: 'v2', value: new THREE.Vector2() }
+          u_mouse: { type: 'v2', value: new THREE.Vector2() },
         };
 
         var material = new THREE.ShaderMaterial({
           uniforms: uniforms,
           vertexShader: document.getElementById('vertexShader').textContent,
-          fragmentShader: document.getElementById('fragmentShader').textContent
+          fragmentShader: document.getElementById('fragmentShader').textContent,
         });
 
         var mesh = new THREE.Mesh(geometry, material);
@@ -137,7 +140,7 @@
         onWindowResize();
         window.addEventListener('resize', onWindowResize, false);
 
-        document.onmousemove = function(e) {
+        document.onmousemove = function (e) {
           uniforms.u_mouse.value.x = e.pageX;
           uniforms.u_mouse.value.y = e.pageY;
         };

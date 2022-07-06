@@ -5,15 +5,16 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  // background-color: #000000;
-  // background-image: url('/assets/bg012.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
-  background: linear-gradient(180deg, #8e269f 0%, #131d38 75%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bg01.svg');
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover, cover;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
 
 .live-mode {
@@ -28,44 +29,28 @@
   display: flex;
   max-width: 100%;
   cursor: pointer;
-  // background-image: url('/assets/ywc-18-countdown-bg.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   position: relative;
-
-  &.warn {
-    filter: saturate(2);
-  }
+  border: 5px solid #e4d0a2;
+  border-radius: 40px;
 }
 
 @keyframes text-warning {
   0% {
-    color: #f37637;
-    transform: scale(1);
-  }
-  25% {
-    color: #fefefe;
+    color: #e4d0a2;
   }
   50% {
-    color: #f37637;
-    transform: scale(1.2);
-  }
-  75% {
     color: #fefefe;
   }
   100% {
-    color: #f37637;
-    transform: scale(1);
+    color: #e4d0a2;
   }
 }
 
 .countdown-text {
   font-size: 5.6em;
   font-weight: 800;
-  font-family: 'Barlow', sans-serif;
   white-space: nowrap;
-  text-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+  margin: 0.75em 0;
   span {
     width: 0.8em;
     display: inline-block;
@@ -77,14 +62,17 @@
 
   @media screen and (max-width: 800px) {
     font-size: 2.6em;
+    margin: 0.6em 0;
   }
 
   @media screen and (max-width: 600px) {
     font-size: 2em;
+    margin: 0.4em 0;
   }
 
   @media screen and (max-width: 400px) {
     font-size: 1.6em;
+    margin: 0.1em 0;
   }
 }
 
@@ -97,9 +85,7 @@
   width: 100vw;
   text-align: center;
   padding: 0.5em;
-  // background-color: rgba(255, 255, 255, 0.05);
   font-weight: 800;
-  font-family: 'Barlow', sans-serif;
 }
 
 .sponsor-container {
@@ -125,11 +111,30 @@
   margin: 0 24px;
 }
 
-.logo {
+.logo-container {
   position: fixed;
-  left: 1.5em;
+  left: 0;
   top: 1.5em;
-  width: 180px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4em;
+  box-sizing: border-box;
+  .logo {
+    height: 5em;
+  }
+  .slogan {
+    width: 300px;
+    text-align: right;
+    color: #e4d0a2;
+    p {
+      font-size: 1.4em;
+      line-height: 1.5em;
+      margin: 0;
+    }
+  }
 }
 
 .ywc-logo-2 {
@@ -158,4 +163,17 @@
     border: 3px solid #e4d0a2;
     box-sizing: border-box;
   }
+}
+
+.bg-decorator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bg01.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }

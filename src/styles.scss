@@ -33,13 +33,33 @@ $ywc17-countdown-theme: mat-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: 'FC Neo Classic';
+  src: url(./assets/fonts/FCNeoClassic/FCNeoClassic.eot)
+    format('embedded-opentype');
+  src: url(./assets/fonts/FCNeoClassic/FCNeoClassic.woff2) format('woff2'),
+    url(./assets/fonts/FCNeoClassic/FCNeoClassic.woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FC Neo Classic';
+  src: url(./assets/fonts/FCNeoClassic/FCNeoClassicItalic.eot)
+    format('embedded-opentype');
+  src: url(./assets/fonts/FCNeoClassic/FCNeoClassicItalic.woff2) format('woff2'),
+    url(./assets/fonts/FCNeoClassic/FCNeoClassicItalic.woff) format('woff');
+  font-style: italic;
+  font-display: swap;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: 'FC Neo Classic', 'Helvetica Neue', sans-serif;
   background: #111;
   color: #fefefe;
   background: linear-gradient(180deg, #8e269f 0%, #131d38 75%);
